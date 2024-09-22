@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//PrintSpiral method
+// PrintSpiral method
 func PrintSpiral(n int) []int {
 
 	var left int
@@ -19,13 +19,13 @@ func PrintSpiral(n int) []int {
 	top = 0
 	right = n - 1
 	bottom = n - 1
-	var size int
-	size = n * n
-	var s []int
-	s = make([]int, size)
+	// var size int
+	var size = n * n
+	// var s []int
+	var s = make([]int, size)
 
-	var i int
-	i = 0
+	// var i int
+	var i = 0
 	for left < right {
 		// work right, along top
 		var c int

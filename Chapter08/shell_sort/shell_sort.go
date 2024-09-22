@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -16,8 +16,8 @@ func ShellSorter(elements []int) {
 	)
 
 	for {
-		var interval int
-		interval = power(2, k) + 1
+		// var interval int
+		var interval = power(2, k) + 1
 		if interval > n-1 {
 			break
 		}
@@ -40,7 +40,7 @@ func ShellSorter(elements []int) {
 	}
 }
 
-//power function
+// power function
 func power(exponent int, index int) int {
 	var power int
 	power = 1

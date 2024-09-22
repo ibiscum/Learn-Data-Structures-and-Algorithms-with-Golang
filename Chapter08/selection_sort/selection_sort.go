@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -26,16 +26,16 @@ func SelectionSorter(elements []int) {
 
 // swap method
 func swap(elements []int, i int, j int) {
-	var temp int
-	temp = elements[j]
+	// var temp int
+	var temp = elements[j]
 	elements[j] = elements[i]
 	elements[i] = temp
 }
 
-//main method
+// main method
 func main() {
-	var elements []int
-	elements = []int{11, 4, 18, 6, 19, 21, 71, 13, 15, 2}
+	// var elements []int
+	var elements = []int{11, 4, 18, 6, 19, 21, 71, 13, 15, 2}
 	fmt.Println("Before Sorting ", elements)
 	SelectionSorter(elements)
 	fmt.Println("After Sorting", elements)
