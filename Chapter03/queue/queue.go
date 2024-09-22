@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -26,7 +26,7 @@ func (order *Order) New(priority int, quantity int, product string, customerName
 	order.customerName = customerName
 }
 
-//Add method adds the order to the queue
+// Add method adds the order to the queue
 func (queue *Queue) Add(order *Order) {
 	if len(*queue) == 0 {
 		*queue = append(*queue, order)
@@ -52,8 +52,8 @@ func (queue *Queue) Add(order *Order) {
 // main method
 func main() {
 
-	var queue Queue
-	queue = make(Queue, 0)
+	// var queue Queue
+	var queue = make(Queue, 0)
 
 	var order1 *Order = &Order{}
 

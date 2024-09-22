@@ -95,9 +95,9 @@ func (address Address) getId() string {
 }
 
 // Address class method getCity
-func (address Address) getCity() string {
-	return address.city
-}
+// func (address Address) getCity() string {
+// 	return address.city
+// }
 
 // main method
 func main() {

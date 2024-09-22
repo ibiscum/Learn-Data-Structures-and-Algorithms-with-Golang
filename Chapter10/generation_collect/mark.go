@@ -2,31 +2,30 @@
 // in Go Data Structures and algorithms book
 package main
 
+// func IfMarked(root *object) {
 
-func IfMarked(root *object) {
-    
-}
+// }
 
-func Mark(root *object) {
+// func Mark(root *object) {
 
-   var markedAlready bool
+//    var markedAlready bool
 
-   markedAlready = IfMarked(root)
-   if !markedAlready {
+//    markedAlready = IfMarked(root)
+//    if !markedAlready {
 
-        map[root] = true
+//         map[root] = true
 
-   }
+//    }
 
-   var references *[]object
+//    var references *[]object
 
-   references = GetReferences(root)
+//    references = GetReferences(root)
 
-   var reference *object
+//    var reference *object
 
-   for _, reference = range references {
+//    for _, reference = range references {
 
-       Mark(reference)
-   }
+//        Mark(reference)
+//    }
 
-}
+//}

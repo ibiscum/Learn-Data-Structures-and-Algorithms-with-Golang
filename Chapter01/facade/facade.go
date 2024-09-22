@@ -111,4 +111,6 @@ func main() {
 	fmt.Println(account.accountType)
 	var transaction = facade.createTransaction("21456", "87345", 1000)
 	fmt.Println(transaction.amount)
+	account.getById("id")
+	account.deleteById("id")
 }

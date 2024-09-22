@@ -228,27 +228,27 @@ func stringify(treeNode *TreeNode, level int) {
 }
 
 // prints the binary search tree
-func print(tree *BinarySearchTree) {
-	if tree != nil {
+// func print(tree *BinarySearchTree) {
+// 	if tree != nil {
 
-		fmt.Println(" Value", tree.rootNode.value)
-		fmt.Printf("Root Tree Node")
-		printTreeNode(tree.rootNode)
-	} else {
-		fmt.Printf("Nil\n")
-	}
-}
+// 		fmt.Println(" Value", tree.rootNode.value)
+// 		fmt.Printf("Root Tree Node")
+// 		printTreeNode(tree.rootNode)
+// 	} else {
+// 		fmt.Printf("Nil\n")
+// 	}
+// }
 
 // printTreeNode method
-func printTreeNode(treeNode *TreeNode) {
-	if treeNode != nil {
-		fmt.Println(" Value", treeNode.value)
-		fmt.Printf("TreeNode Left")
-		printTreeNode(treeNode.leftNode)
-		fmt.Printf("TreeNode Right")
-		printTreeNode(treeNode.rightNode)
-	} else {
-		fmt.Printf("Nil\n")
-	}
+// func printTreeNode(treeNode *TreeNode) {
+// 	if treeNode != nil {
+// 		fmt.Println(" Value", treeNode.value)
+// 		fmt.Printf("TreeNode Left")
+// 		printTreeNode(treeNode.leftNode)
+// 		fmt.Printf("TreeNode Right")
+// 		printTreeNode(treeNode.rightNode)
+// 	} else {
+// 		fmt.Printf("Nil\n")
+// 	}
 
-}
+// }

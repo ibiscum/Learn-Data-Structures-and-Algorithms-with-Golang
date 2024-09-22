@@ -30,7 +30,7 @@ type Adaptee struct {
 
 // Adaptee class method convert
 func (adaptee Adaptee) convert() {
-	fmt.Println("Adaptee convert method")
+	fmt.Printf("Adaptee convert method: %d", adaptee.adapterType)
 }
 
 // main method

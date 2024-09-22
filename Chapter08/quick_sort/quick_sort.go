@@ -1,17 +1,18 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
 // importing fmt package
 import (
 	"fmt"
+	"log"
 )
 
-//Quick Sorter method
+// Quick Sorter method
 func QuickSorter(elements []int, below int, upper int) {
 	if below < upper {
-		var part int
-		part = divideParts(elements, below, upper)
+		// var part int
+		var part = divideParts(elements, below, upper)
 		QuickSorter(elements, below, part-1)
 		QuickSorter(elements, part+1, upper)
 	}
@@ -19,8 +20,8 @@ func QuickSorter(elements []int, below int, upper int) {
 
 // divideParts method
 func divideParts(elements []int, below int, upper int) int {
-	var center int
-	center = elements[upper]
+	// var center int
+	var center = elements[upper]
 	var i int
 	i = below
 	var j int
@@ -34,12 +35,18 @@ func divideParts(elements []int, below int, upper int) int {
 	return i
 }
 
-//swap method
+// swap method
 func swap(element1 *int, element2 *int) {
-	var val int
-	val = *element1
+	// var val int
+	var val = *element1
 	*element1 = *element2
 	*element2 = val
+}
+
+func checkError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // main method
@@ -47,14 +54,16 @@ func main() {
 	var num int
 
 	fmt.Print("Enter Number of Elements: ")
-	fmt.Scan(&num)
+	_, err := fmt.Scan(&num)
+	checkError(err)
 
 	var array = make([]int, num)
 
 	var i int
 	for i = 0; i < num; i++ {
 		fmt.Print("array[", i, "]: ")
-		fmt.Scan(&array[i])
+		_, err := fmt.Scan(&array[i])
+		checkError(err)
 	}
 
 	fmt.Print("Elements: ", array, "\n")

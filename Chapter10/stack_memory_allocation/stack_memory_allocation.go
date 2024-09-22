@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -17,8 +17,8 @@ func addOne(num int) {
 // main method
 func main() {
 
-	var number int
-	number = 17
+	// var number int
+	var number = 17
 
 	fmt.Println("value of number", number, "Address of number", &number)
 

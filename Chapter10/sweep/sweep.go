@@ -1,31 +1,28 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
+func Sweep() {
 
-func Sweep(){
+	//    var objects *[]object
 
+	//    objects = GetObjects()
 
+	//    var object *object
 
-   var objects *[]object
+	//for _, object = range objects {
 
-   objects = GetObjects()
+	//var markedAlready bool
 
-   var object *object
+	//markedAlready = IfMarked(object)
+	//    if markedAlready {
 
-   for _, object = range objects {
+	//         map[object] = true
 
-   var markedAlready bool
+	//    }
 
-   markedAlready = IfMarked(object)
-   if markedAlready {
+	//        Release(object)
+	//    }
 
-        map[object] = true
-
-   }
-
-       Release(object)
-   }
-
-
+	// }
 }

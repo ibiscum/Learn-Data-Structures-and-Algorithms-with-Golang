@@ -104,19 +104,24 @@ func main() {
 	var matrix2 = [2][2]int{
 		{6, 7},
 		{3, 4}}
-	var sum [2][2]int
-	sum = add(matrix1, matrix2)
+
+	// var sum [2][2]int
+	var sum = add(matrix1, matrix2)
 
 	fmt.Println(sum)
 
-	var difference [2][2]int
-	difference = subtract(matrix1, matrix2)
+	// var difference [2][2]int
+	var difference = subtract(matrix1, matrix2)
 
 	fmt.Println(difference)
 
-	var product [2][2]int
-	product = multiply(matrix1, matrix2)
+	// var product [2][2]int
+	var product = multiply(matrix1, matrix2)
 
 	fmt.Println(product)
+
+	inverse(matrix1)
+	transpose(matrix1)
+	determinant(matrix1)
 
 }

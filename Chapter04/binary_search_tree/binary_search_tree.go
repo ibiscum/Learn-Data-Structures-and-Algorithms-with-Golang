@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -60,7 +60,7 @@ func (tree *BinarySearchTree) InOrderTraverseTree(function func(int)) {
 	inOrderTraverseTree(tree.rootNode, function)
 }
 
-//  inOrderTraverseTree method
+// inOrderTraverseTree method
 func inOrderTraverseTree(treeNode *TreeNode, function func(int)) {
 	if treeNode != nil {
 		inOrderTraverseTree(treeNode.leftNode, function)
@@ -76,7 +76,7 @@ func (tree *BinarySearchTree) PreOrderTraverseTree(function func(int)) {
 	preOrderTraverseTree(tree.rootNode, function)
 }
 
-//  preOrderTraverseTree method
+// preOrderTraverseTree method
 func preOrderTraverseTree(treeNode *TreeNode, function func(int)) {
 	if treeNode != nil {
 		function(treeNode.value)
@@ -92,7 +92,7 @@ func (tree *BinarySearchTree) PostOrderTraverseTree(function func(int)) {
 	postOrderTraverseTree(tree.rootNode, function)
 }
 
-//  postOrderTraverseTree method
+// postOrderTraverseTree method
 func postOrderTraverseTree(treeNode *TreeNode, function func(int)) {
 	if treeNode != nil {
 		postOrderTraverseTree(treeNode.leftNode, function)
@@ -143,7 +143,7 @@ func (tree *BinarySearchTree) SearchNode(key int) bool {
 	return searchNode(tree.rootNode, key)
 }
 
-//  searchNode method
+// searchNode method
 func searchNode(treeNode *TreeNode, key int) bool {
 	if treeNode == nil {
 		return false
@@ -164,7 +164,7 @@ func (tree *BinarySearchTree) RemoveNode(key int) {
 	removeNode(tree.rootNode, key)
 }
 
-//  removeNode method
+// removeNode method
 func removeNode(treeNode *TreeNode, key int) *TreeNode {
 	if treeNode == nil {
 		return nil
@@ -230,30 +230,30 @@ func stringify(treeNode *TreeNode, level int) {
 }
 
 // print method
-func print(tree *BinarySearchTree) {
-	if tree != nil {
+// func print(tree *BinarySearchTree) {
+// 	if tree != nil {
 
-		fmt.Println(" Value", tree.rootNode.value)
-		fmt.Printf("Root Tree Node")
-		printTreeNode(tree.rootNode)
-	} else {
-		fmt.Printf("Nil\n")
-	}
-}
+// 		fmt.Println(" Value", tree.rootNode.value)
+// 		fmt.Printf("Root Tree Node")
+// 		printTreeNode(tree.rootNode)
+// 	} else {
+// 		fmt.Printf("Nil\n")
+// 	}
+// }
 
 //printTreeNode method
-func printTreeNode(treeNode *TreeNode) {
-	if treeNode != nil {
-		fmt.Println(" Value", treeNode.value)
-		fmt.Printf("TreeNode Left")
-		printTreeNode(treeNode.leftNode)
-		fmt.Printf("TreeNode Right")
-		printTreeNode(treeNode.rightNode)
-	} else {
-		fmt.Printf("Nil\n")
-	}
+// func printTreeNode(treeNode *TreeNode) {
+// 	if treeNode != nil {
+// 		fmt.Println(" Value", treeNode.value)
+// 		fmt.Printf("TreeNode Left")
+// 		printTreeNode(treeNode.leftNode)
+// 		fmt.Printf("TreeNode Right")
+// 		printTreeNode(treeNode.rightNode)
+// 	} else {
+// 		fmt.Printf("Nil\n")
+// 	}
 
-}
+// }
 
 // main method
 func main() {
