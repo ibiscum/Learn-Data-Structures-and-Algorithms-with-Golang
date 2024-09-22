@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,13 +7,13 @@ import (
 	"fmt"
 )
 
-//Account struct
+// Account struct
 type Account struct {
 	id          string
 	accountType string
 }
 
-//Account class method create - creates account given AccountType
+// Account class method create - creates account given AccountType
 func (account *Account) create(accountType string) *Account {
 	fmt.Println("account creation with type")
 	account.accountType = accountType
@@ -21,31 +21,31 @@ func (account *Account) create(accountType string) *Account {
 	return account
 }
 
-//Account class method getById  given id string
+// Account class method getById  given id string
 func (account *Account) getById(id string) *Account {
-	fmt.Println("getting account by Id")
+	fmt.Printf("getting account by ID: %s\n", id)
 	return account
 }
 
-//Account class method deleteById given id string
+// Account class method deleteById given id string
 func (account *Account) deleteById(id string) {
-	fmt.Println("delete account by id")
+	fmt.Printf("delete account by ID: %s", id)
 }
 
-//Customer struct
+// Customer struct
 type Customer struct {
 	name string
 	id   int
 }
 
-//Customer class method create - create Customer given nam
+// Customer class method create - create Customer given nam
 func (customer *Customer) create(name string) *Customer {
 	fmt.Println("creating customer")
 	customer.name = name
 	return customer
 }
 
-//Transaction struct
+// Transaction struct
 type Transaction struct {
 	id            string
 	amount        float32
@@ -53,7 +53,7 @@ type Transaction struct {
 	destAccountId string
 }
 
-//Transaction class method create Transaction
+// Transaction class method create Transaction
 func (transaction *Transaction) create(srcAccountId string, destAccountId string, amount float32) *Transaction {
 	fmt.Println("creating transaction")
 	transaction.srcAccountId = srcAccountId
@@ -62,26 +62,26 @@ func (transaction *Transaction) create(srcAccountId string, destAccountId string
 	return transaction
 }
 
-//BranchManagerFacade struct
+// BranchManagerFacade struct
 type BranchManagerFacade struct {
 	account     *Account
 	customer    *Customer
 	transaction *Transaction
 }
 
-//methodd NewBranchManagerFacade
+// methodd NewBranchManagerFacade
 func NewBranchManagerFacade() *BranchManagerFacade {
 	return &BranchManagerFacade{&Account{}, &Customer{}, &Transaction{}}
 }
 
-//BranchManagerFacade class method createCustomerAccount
+// BranchManagerFacade class method createCustomerAccount
 func (facade *BranchManagerFacade) createCustomerAccount(customerName string, accountType string) (*Customer, *Account) {
 	var customer = facade.customer.create(customerName)
 	var account = facade.account.create(accountType)
 	return customer, account
 }
 
-//BranchManagerFacade class method createTransaction
+// BranchManagerFacade class method createTransaction
 func (facade *BranchManagerFacade) createTransaction(srcAccountId string, destAccountId string, amount float32) *Transaction {
 
 	var transaction = facade.transaction.create(srcAccountId, destAccountId, amount)
@@ -89,7 +89,7 @@ func (facade *BranchManagerFacade) createTransaction(srcAccountId string, destAc
 
 }
 
-//main method
+// main method
 func main() {
 	var facade = NewBranchManagerFacade()
 	var customer *Customer

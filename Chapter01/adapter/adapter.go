@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,23 +7,23 @@ import (
 	"fmt"
 )
 
-//IProces interface
+// IProces interface
 type IProcess interface {
 	process()
 }
 
-//Adapter struct
+// Adapter struct
 type Adapter struct {
 	adaptee Adaptee
 }
 
-//Adapter class method process
+// Adapter class method process
 func (adapter Adapter) process() {
 	fmt.Println("Adapter process")
 	adapter.adaptee.convert()
 }
 
-//Adaptee Struct
+// Adaptee Struct
 type Adaptee struct {
 	adapterType int
 }
@@ -35,9 +35,7 @@ func (adaptee Adaptee) convert() {
 
 // main method
 func main() {
-
 	var processor IProcess = Adapter{}
 
 	processor.process()
-
 }
