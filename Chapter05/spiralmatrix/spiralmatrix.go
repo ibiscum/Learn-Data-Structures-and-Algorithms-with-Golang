@@ -64,10 +64,12 @@ func PrintSpiral(n int) []int {
 }
 
 func main() {
-	var n int
-	n = 5
-	var length int
-	length = 2
+	// var n int
+	var n = 5
+
+	// var length int
+	var length = 2
+
 	var i int
 	var sketch int
 	for i, sketch = range PrintSpiral(n) {

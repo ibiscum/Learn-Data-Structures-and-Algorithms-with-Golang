@@ -80,8 +80,7 @@ func determinant(matrix1 [2][2]int) float64 {
 func inverse(matrix [2][2]int) [][]float64 {
 
 	// var det float64
-
-	// var det = determinant(matrix)
+	determinant(matrix)
 
 	// var invmatrix float64
 	// invmatrix[0][0] = matrix[1][1] / det

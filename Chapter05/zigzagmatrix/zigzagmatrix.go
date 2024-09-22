@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,14 +7,16 @@ import (
 	"fmt"
 )
 
-//prints the matrix in zig zag fashion
+// prints the matrix in zig zag fashion
 func PrintZigZag(n int) []int {
-	var zigzag []int
-	zigzag = make([]int, n*n)
-	var i int
-	i = 0
-	var m int
-	m = n * 2
+	// var zigzag []int
+	var zigzag = make([]int, n*n)
+
+	// var i int
+	var i = 0
+
+	// var m int
+	var m = n * 2
 	var p int
 	for p = 1; p <= m; p++ {
 		var x int
@@ -48,10 +50,11 @@ func PrintZigZag(n int) []int {
 
 // main method
 func main() {
-	var n int
-	n = 5
-	var length int
-	length = 2
+	// var n int
+	var n = 5
+
+	// var length int
+	var length = 2
 	var i int
 	var sketch int
 	for i, sketch = range PrintZigZag(n) {
