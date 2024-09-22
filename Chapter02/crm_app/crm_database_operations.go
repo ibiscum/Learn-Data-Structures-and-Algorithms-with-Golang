@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -6,6 +6,8 @@ package main
 import (
 	//    "fmt"
 	"database/sql"
+	"log"
+
 	//  "log"
 	//  "net/http"
 	//  "text/template"
@@ -17,6 +19,12 @@ type Customer struct {
 	CustomerId   int
 	CustomerName string
 	SSN          string
+}
+
+func checkError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func GetConnection() (database *sql.DB) {
@@ -32,8 +40,8 @@ func GetConnection() (database *sql.DB) {
 }
 
 func GetCustomerById(customerId int) Customer {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
 	var error error
 	var rows *sql.Rows
@@ -96,16 +104,15 @@ func GetCustomers() []Customer {
 }
 
 func InsertCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
-	var error error
 	var insert *sql.Stmt
-	insert, error = database.Prepare("INSERT INTO CUSTOMER(CustomerName,SSN) VALUES(?,?)")
-	if error != nil {
-		panic(error.Error())
-	}
-	insert.Exec(customer.CustomerName, customer.SSN)
+	insert, err := database.Prepare("INSERT INTO CUSTOMER(CustomerName,SSN) VALUES(?,?)")
+	checkError(err)
+
+	_, err = insert.Exec(customer.CustomerName, customer.SSN)
+	checkError(err)
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()
@@ -114,8 +121,8 @@ func InsertCustomer(customer Customer) {
 }
 
 func UpdateCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
 	var error error
 	var update *sql.Stmt
@@ -123,7 +130,8 @@ func UpdateCustomer(customer Customer) {
 	if error != nil {
 		panic(error.Error())
 	}
-	update.Exec(customer.CustomerName, customer.SSN, customer.CustomerId)
+	_, err := update.Exec(customer.CustomerName, customer.SSN, customer.CustomerId)
+	checkError(err)
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()
@@ -131,16 +139,16 @@ func UpdateCustomer(customer Customer) {
 	//return Customer{}
 }
 func DeleteCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
-	var error error
 	var delete *sql.Stmt
-	delete, error = database.Prepare("DELETE FROM Customer WHERE Customerid=?")
-	if error != nil {
-		panic(error.Error())
-	}
-	delete.Exec(customer.CustomerId)
+	delete, err := database.Prepare("DELETE FROM Customer WHERE Customerid=?")
+	checkError(err)
+
+	_, err = delete.Exec(customer.CustomerId)
+	checkError(err)
+
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()

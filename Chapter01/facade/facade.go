@@ -5,6 +5,8 @@ package main
 // importing fmt package
 import (
 	"fmt"
+
+	"github.com/google/uuid"
 )
 
 // Account struct
@@ -15,7 +17,10 @@ type Account struct {
 
 // Account class method create - creates account given AccountType
 func (account *Account) create(accountType string) *Account {
+	uuid := uuid.NewString()
+
 	fmt.Println("account creation with type")
+	account.id = uuid
 	account.accountType = accountType
 
 	return account
@@ -35,13 +40,17 @@ func (account *Account) deleteById(id string) {
 // Customer struct
 type Customer struct {
 	name string
-	id   int
+	id   string
 }
 
 // Customer class method create - create Customer given nam
 func (customer *Customer) create(name string) *Customer {
+	uuid := uuid.NewString()
+
 	fmt.Println("creating customer")
+
 	customer.name = name
+	customer.id = uuid
 	return customer
 }
 
@@ -55,7 +64,10 @@ type Transaction struct {
 
 // Transaction class method create Transaction
 func (transaction *Transaction) create(srcAccountId string, destAccountId string, amount float32) *Transaction {
+	uuid := uuid.NewString()
+
 	fmt.Println("creating transaction")
+	transaction.id = uuid
 	transaction.srcAccountId = srcAccountId
 	transaction.destAccountId = destAccountId
 	transaction.amount = amount

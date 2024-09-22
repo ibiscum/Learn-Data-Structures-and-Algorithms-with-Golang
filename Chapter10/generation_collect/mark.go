@@ -1,7 +1,11 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
+
+func IfMarked(root *object) {
+    
+}
 
 func Mark(root *object) {
 

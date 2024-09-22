@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -7,14 +7,22 @@ import (
 	//    "fmt"
 	"net/http"
 	"text/template"
+
 	//    "errors"
 	"log"
 )
 
+func checkError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func Home(writer http.ResponseWriter, reader *http.Request) {
-	var template_html *template.Template
-	template_html = template.Must(template.ParseFiles("main.html"))
-	template_html.Execute(writer, nil)
+	// var template_html *template.Template
+	var template_html = template.Must(template.ParseFiles("main.html"))
+	err := template_html.Execute(writer, nil)
+	checkError(err)
 
 }
 
@@ -29,5 +37,6 @@ func main() {
 	//  http.HandleFunc("/insert", Insert)
 	//  http.HandleFunc("/update", Update)
 	//    http.HandleFunc("/delete", Delete)
-	http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8000", nil)
+	checkError(err)
 }

@@ -1,0 +1,8 @@
+go 1.23.0
+
+use (
+	./Appendix
+	./Chapter01
+	./Chapter02
+	./Chapter03
+)

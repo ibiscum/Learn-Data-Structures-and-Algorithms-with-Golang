@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -15,12 +15,13 @@ func main() {
 	var i int
 	for i = 0; i < len(arr); i++ {
 
+		i := i
 		fmt.Println("printing elements ", arr[i])
 
 	}
 
 	var value int
-	for i, value = range arr {
+	for _, value = range arr {
 
 		fmt.Println(" range ", value)
 

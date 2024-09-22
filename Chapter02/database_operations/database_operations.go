@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -6,6 +6,8 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
+
 	//  "log"
 	//  "net/http"
 	//  "text/template"
@@ -17,6 +19,12 @@ type Customer struct {
 	CustomerId   int
 	CustomerName string
 	SSN          string
+}
+
+func checkError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func GetConnection() (database *sql.DB) {
@@ -32,17 +40,15 @@ func GetConnection() (database *sql.DB) {
 }
 
 func GetCustomers() []Customer {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
-	var error error
-	var rows *sql.Rows
-	rows, error = database.Query("SELECT * FROM Customer ORDER BY Customerid DESC")
-	if error != nil {
-		panic(error.Error())
-	}
-	var customer Customer
-	customer = Customer{}
+	//var rows *sql.Rows
+	var rows, err = database.Query("SELECT * FROM Customer ORDER BY Customerid DESC")
+	checkError(err)
+
+	// var customer Customer
+	var customer = Customer{}
 
 	var customers []Customer
 	customers = []Customer{}
@@ -50,10 +56,8 @@ func GetCustomers() []Customer {
 		var customerId int
 		var customerName string
 		var ssn string
-		error = rows.Scan(&customerId, &customerName, &ssn)
-		if error != nil {
-			panic(error.Error())
-		}
+		err = rows.Scan(&customerId, &customerName, &ssn)
+		checkError(err)
 		customer.CustomerId = customerId
 		customer.CustomerName = customerName
 		customer.SSN = ssn
@@ -66,8 +70,8 @@ func GetCustomers() []Customer {
 }
 
 func InsertCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
 	var error error
 	var insert *sql.Stmt
@@ -84,8 +88,8 @@ func InsertCustomer(customer Customer) {
 }
 
 func UpdateCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
 	var error error
 	var update *sql.Stmt
@@ -93,7 +97,9 @@ func UpdateCustomer(customer Customer) {
 	if error != nil {
 		panic(error.Error())
 	}
-	update.Exec(customer.CustomerName, customer.SSN, customer.CustomerId)
+	_, err := update.Exec(customer.CustomerName, customer.SSN, customer.CustomerId)
+	checkError(err)
+
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()
@@ -101,8 +107,8 @@ func UpdateCustomer(customer Customer) {
 	//return Customer{}
 }
 func deleteCustomer(customer Customer) {
-	var database *sql.DB
-	database = GetConnection()
+	// var database *sql.DB
+	var database = GetConnection()
 
 	var error error
 	var delete *sql.Stmt
