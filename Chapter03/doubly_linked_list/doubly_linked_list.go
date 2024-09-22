@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -19,7 +19,7 @@ type LinkedList struct {
 	headNode *Node
 }
 
-//AddToHead method of LinkedList
+// AddToHead method of LinkedList
 func (linkedList *LinkedList) AddToHead(property int) {
 	var node = &Node{}
 	node.property = property
@@ -34,7 +34,7 @@ func (linkedList *LinkedList) AddToHead(property int) {
 
 }
 
-//NodeWithValue method of LinkedList
+// NodeWithValue method of LinkedList
 func (linkedList *LinkedList) NodeWithValue(property int) *Node {
 	var node *Node
 	var nodeWith *Node
@@ -47,15 +47,14 @@ func (linkedList *LinkedList) NodeWithValue(property int) *Node {
 	return nodeWith
 }
 
-//AddAfter method of LinkedList
+// AddAfter method of LinkedList
 func (linkedList *LinkedList) AddAfter(nodeProperty int, property int) {
 	var node = &Node{}
 	node.property = property
 	node.nextNode = nil
 
-	var nodeWith *Node
-
-	nodeWith = linkedList.NodeWithValue(nodeProperty)
+	// var nodeWith *Node
+	var nodeWith = linkedList.NodeWithValue(nodeProperty)
 	if nodeWith != nil {
 		//fmt.Println(node.property)
 		node.nextNode = nodeWith.nextNode
@@ -65,7 +64,7 @@ func (linkedList *LinkedList) AddAfter(nodeProperty int, property int) {
 
 }
 
-//LastNode method of LinkedList
+// LastNode method of LinkedList
 func (linkedList *LinkedList) LastNode() *Node {
 	var node *Node
 	var lastNode *Node
@@ -77,15 +76,14 @@ func (linkedList *LinkedList) LastNode() *Node {
 	return lastNode
 }
 
-//AddToEnd method of LinkedList
+// AddToEnd method of LinkedList
 func (linkedList *LinkedList) AddToEnd(property int) {
 	var node = &Node{}
 	node.property = property
 	node.nextNode = nil
 
-	var lastNode *Node
-
-	lastNode = linkedList.LastNode()
+	// var lastNode *Node
+	var lastNode = linkedList.LastNode()
 
 	if lastNode != nil {
 
@@ -94,7 +92,7 @@ func (linkedList *LinkedList) AddToEnd(property int) {
 	}
 }
 
-//IterateList method of LinkedList
+// IterateList method of LinkedList
 func (linkedList *LinkedList) IterateList() {
 
 	var node *Node
@@ -104,7 +102,7 @@ func (linkedList *LinkedList) IterateList() {
 	}
 }
 
-//NodeBetweenValues method of LinkedList
+// NodeBetweenValues method of LinkedList
 func (linkedList *LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node {
 	var node *Node
 	var nodeWith *Node
@@ -122,9 +120,8 @@ func (linkedList *LinkedList) NodeBetweenValues(firstProperty int, secondPropert
 // main method
 func main() {
 
-	var linkedList LinkedList
-
-	linkedList = LinkedList{}
+	// var linkedList LinkedList
+	var linkedList = LinkedList{}
 
 	linkedList.AddToHead(1)
 	linkedList.AddToHead(3)
@@ -132,8 +129,8 @@ func main() {
 	linkedList.AddAfter(1, 7)
 	fmt.Println(linkedList.headNode.property)
 
-	var node *Node
-	node = linkedList.NodeBetweenValues(1, 5)
+	// var node *Node
+	var node = linkedList.NodeBetweenValues(1, 5)
 	fmt.Println(node.property)
 
 }
