@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -8,19 +8,18 @@ import (
 	"crypto/sha256"
 	"encoding"
 	"fmt"
-	"hash"
 	"log"
 )
 
-//main method
+// main method
 func main() {
 	const (
 		example1 = "this is a example "
 		example2 = "second example"
 	)
 
-	var firstHash hash.Hash
-	firstHash = sha256.New()
+	// var firstHash hash.Hash
+	var firstHash = sha256.New()
 	firstHash.Write([]byte(example1))
 
 	var marshaler encoding.BinaryMarshaler
@@ -36,8 +35,8 @@ func main() {
 		log.Fatal("unable to marshal first Hash:", err)
 	}
 
-	var secondHash hash.Hash
-	secondHash = sha256.New()
+	// var secondHash hash.Hash
+	var secondHash = sha256.New()
 
 	var unmarshaler encoding.BinaryUnmarshaler
 

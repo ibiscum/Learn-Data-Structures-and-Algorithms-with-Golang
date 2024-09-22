@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -11,8 +11,8 @@ import (
 // main method
 func main() {
 
-	var integers []int
-	integers = []int{1, 3, 5, 7}
+	// var integers []int
+	var integers = []int{1, 3, 5, 7}
 
 	var circular_list *ring.Ring
 	circular_list = ring.New(len(integers))

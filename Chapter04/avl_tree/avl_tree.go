@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -21,7 +21,7 @@ type TreeNode struct {
 	LinkedNodes  [2]*TreeNode
 }
 
-//opposite method
+// opposite method
 func opposite(nodeValue int) int {
 	return 1 - nodeValue
 }
@@ -29,8 +29,8 @@ func opposite(nodeValue int) int {
 // single rotation method
 func singleRotation(rootNode *TreeNode, nodeValue int) *TreeNode {
 
-	var saveNode *TreeNode
-	saveNode = rootNode.LinkedNodes[opposite(nodeValue)]
+	// var saveNode *TreeNode
+	var saveNode = rootNode.LinkedNodes[opposite(nodeValue)]
 	rootNode.LinkedNodes[opposite(nodeValue)] = saveNode.LinkedNodes[nodeValue]
 	saveNode.LinkedNodes[nodeValue] = rootNode
 	return saveNode
@@ -55,10 +55,11 @@ func doubleRotation(rootNode *TreeNode, nodeValue int) *TreeNode {
 // adjust balance method
 func adjustBalance(rootNode *TreeNode, nodeValue int, balanceValue int) {
 
-	var node *TreeNode
-	node = rootNode.LinkedNodes[nodeValue]
-	var oppNode *TreeNode
-	oppNode = node.LinkedNodes[opposite(nodeValue)]
+	// var node *TreeNode
+	var node = rootNode.LinkedNodes[nodeValue]
+
+	// var oppNode *TreeNode
+	var oppNode = node.LinkedNodes[opposite(nodeValue)]
 	switch oppNode.BalanceValue {
 	case 0:
 		rootNode.BalanceValue = 0
@@ -75,10 +76,11 @@ func adjustBalance(rootNode *TreeNode, nodeValue int, balanceValue int) {
 
 // balanceTree method
 func BalanceTree(rootNode *TreeNode, nodeValue int) *TreeNode {
-	var node *TreeNode
-	node = rootNode.LinkedNodes[nodeValue]
-	var balance int
-	balance = 2*nodeValue - 1
+	// var node *TreeNode
+	var node = rootNode.LinkedNodes[nodeValue]
+
+	// var balance int
+	var balance = 2*nodeValue - 1
 	if node.BalanceValue == balance {
 		rootNode.BalanceValue = 0
 		node.BalanceValue = 0
@@ -88,7 +90,7 @@ func BalanceTree(rootNode *TreeNode, nodeValue int) *TreeNode {
 	return doubleRotation(rootNode, opposite(nodeValue))
 }
 
-//insertRNode method
+// insertRNode method
 func insertRNode(rootNode *TreeNode, key KeyValue) (*TreeNode, bool) {
 	if rootNode == nil {
 		return &TreeNode{KeyValue: key}, false
@@ -125,10 +127,11 @@ func RemoveNode(treeNode **TreeNode, key KeyValue) {
 
 // removeBalance method
 func removeBalance(rootNode *TreeNode, nodeValue int) (*TreeNode, bool) {
-	var node *TreeNode
-	node = rootNode.LinkedNodes[opposite(nodeValue)]
-	var balance int
-	balance = 2*nodeValue - 1
+	// var node *TreeNode
+	var node = rootNode.LinkedNodes[opposite(nodeValue)]
+
+	// var balance int
+	var balance = 2*nodeValue - 1
 	switch node.BalanceValue {
 	case -balance:
 		rootNode.BalanceValue = 0
@@ -142,6 +145,7 @@ func removeBalance(rootNode *TreeNode, nodeValue int) (*TreeNode, bool) {
 	node.BalanceValue = balance
 	return singleRotation(rootNode, nodeValue), true
 }
+
 // removeRNode method
 func removeRNode(rootNode *TreeNode, key KeyValue) (*TreeNode, bool) {
 	if rootNode == nil {
@@ -187,15 +191,16 @@ type integerKey int
 func (k integerKey) LessThan(k1 KeyValue) bool { return k < k1.(integerKey) }
 func (k integerKey) EqualTo(k1 KeyValue) bool  { return k == k1.(integerKey) }
 
-//main method
+// main method
 func main() {
 	var treeNode *TreeNode
 	fmt.Println("Tree is empty")
+
 	var avlTree []byte
 	avlTree, _ = json.MarshalIndent(treeNode, "", "   ")
 	fmt.Println(string(avlTree))
 
-	fmt.Println("\n Add Tree")
+	fmt.Println("\nAdd Tree")
 	InsertNode(&treeNode, integerKey(5))
 	InsertNode(&treeNode, integerKey(3))
 	InsertNode(&treeNode, integerKey(8))

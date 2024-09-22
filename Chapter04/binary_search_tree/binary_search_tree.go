@@ -27,8 +27,8 @@ func (tree *BinarySearchTree) InsertElement(key int, value int) {
 	tree.lock.Lock()
 	defer tree.lock.Unlock()
 
-	var treeNode *TreeNode
-	treeNode = &TreeNode{key, value, nil, nil}
+	// var treeNode *TreeNode
+	var treeNode = &TreeNode{key, value, nil, nil}
 	if tree.rootNode == nil {
 		tree.rootNode = treeNode
 	} else {
