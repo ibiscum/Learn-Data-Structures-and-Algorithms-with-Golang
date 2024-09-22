@@ -3,7 +3,7 @@
 package main
 
 
-func Mark( root *object){
+func Mark(root *object) {
 
    var markedAlready bool
 

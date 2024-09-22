@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -7,9 +7,17 @@ import (
 	"fmt"
 	"net/http"
 	"text/template"
+
 	//    "errors"
 	"log"
 )
+
+type Customer string
+
+func GetCustomers() (customers []Customer) {
+	return customers
+
+}
 
 var template_html = template.Must(template.ParseGlob("templates/*"))
 

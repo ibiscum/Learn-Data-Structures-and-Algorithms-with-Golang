@@ -1,26 +1,31 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
+import "log"
 
-func GenerationCollect(){
+func GetObjectsFromOldGeneration(gen int) {
 
-   var currentGeneration int
+}
 
-   currentGeneration = 3
+func GenerationCollect() {
 
-   var objects *[]object
+	// var currentGeneration int
+	var currentGeneration = 3
 
-   objects = GetObjectsFromOldGeneration(3)
+	var objects *[]object
+	objects = GetObjectsFromOldGeneration(currentGeneration)
 
-   var object *object
+	// var object *object
 
-   for _, object = range objects {
-      var markedAlready bool
-      
-      markedAlready = IfMarked(object)
-      if markedAlready {
-         map[object] = true
-      }
-   }
+	for _, object := range objects {
+		var markedAlready bool = true
+
+		// markedAlready := IfMarked(object)
+		if markedAlready {
+
+			log.Printf("object: %v", object)
+			//map[object] = true
+		}
+	}
 }
