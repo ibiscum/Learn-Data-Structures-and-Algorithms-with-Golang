@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -56,8 +56,8 @@ func (knowledgeGraph *KnowledgeGraph) AddLink(class1 Class, class2 Class) {
 
 // Print Links method
 func (knowledgeGraph *KnowledgeGraph) PrintLinks() {
-	var car Class
-	car = Class{"Car"}
+	// var car Class
+	var car = Class{"Car"}
 
 	fmt.Printf("Printing all links adjacent to %s\n", car.Name)
 
@@ -81,9 +81,9 @@ func (knowledgeGraph *KnowledgeGraph) PrintLinks() {
 // main method
 func main() {
 
-	var knowledgeGraph *KnowledgeGraph
+	// var knowledgeGraph *KnowledgeGraph
 
-	knowledgeGraph = NewKnowledgeGraph()
+	var knowledgeGraph = NewKnowledgeGraph()
 
 	var car = Class{"Car"}
 	var tyre = Class{"Tyre"}
