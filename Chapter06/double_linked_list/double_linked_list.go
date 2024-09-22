@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -10,13 +10,14 @@ import (
 
 // main method
 func main() {
-	var linkedList *list.List
-	linkedList = list.New()
-	var element *list.Element
-	element = linkedList.PushBack(14)
+	// var linkedList *list.List
+	var linkedList = list.New()
 
-	var frontElement *list.Element
-	frontElement = linkedList.PushFront(1)
+	// var element *list.Element
+	var element = linkedList.PushBack(14)
+
+	// var frontElement *list.Element
+	var frontElement = linkedList.PushFront(1)
 	linkedList.InsertBefore(6, element)
 	linkedList.InsertAfter(5, frontElement)
 

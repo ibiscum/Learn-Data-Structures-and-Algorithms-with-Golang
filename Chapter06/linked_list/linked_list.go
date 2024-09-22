@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -16,16 +16,16 @@ type Node struct {
 // create List method
 func CreateLinkedList() *Node {
 
-	var headNode *Node
-	headNode = &Node{nil, 'a'}
+	// var headNode *Node
+	var headNode = &Node{nil, 'a'}
 
 	var currNode *Node
 	currNode = headNode
 
 	var i rune
 	for i = 'b'; i <= 'z'; i++ {
-		var node *Node
-		node = &Node{nil, i}
+		// var node *Node
+		var node = &Node{nil, i}
 		currNode.nextNode = node
 		currNode = node
 	}
@@ -33,11 +33,11 @@ func CreateLinkedList() *Node {
 	return headNode
 }
 
-//Stringify  List method
+// Stringify  List method
 func StringifyList(nodeList *Node) {
 
-	var currNode *Node
-	currNode = nodeList
+	// var currNode *Node
+	var currNode = nodeList
 	for {
 		fmt.Printf("%c", currNode.property)
 
@@ -60,8 +60,9 @@ func ReverseLinkedList(nodeList *Node) *Node {
 		if currNode == nil {
 			break
 		}
-		var tempNode *Node
-		tempNode = currNode.nextNode
+
+		// var tempNode *Node
+		var tempNode = currNode.nextNode
 		currNode.nextNode = topNode
 		topNode = currNode
 		currNode = tempNode

@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//Circular Queue
+// Circular Queue
 type CircularQueue struct {
 	size  int
 	nodes []interface{}
@@ -17,13 +17,13 @@ type CircularQueue struct {
 
 // NewCircularQueue method
 func NewQueue(num int) *CircularQueue {
-	var circularQueue CircularQueue
-	circularQueue = CircularQueue{size: num + 1, head: 0, last: 0}
+	// var circularQueue CircularQueue
+	var circularQueue = CircularQueue{size: num + 1, head: 0, last: 0}
 	circularQueue.nodes = make([]interface{}, circularQueue.size)
 	return &circularQueue
 }
 
-//  IsUnUsed method
+// IsUnUsed method
 func (circularQueue CircularQueue) IsUnUsed() bool {
 	return circularQueue.head == circularQueue.last
 }
@@ -42,7 +42,7 @@ func (circularQueue *CircularQueue) Add(element interface{}) {
 	circularQueue.last = (circularQueue.last + 1) % circularQueue.size
 }
 
-//MoveOneStep method
+// MoveOneStep method
 func (circularQueue *CircularQueue) MoveOneStep() (element interface{}) {
 	if circularQueue.IsUnUsed() {
 		return nil
@@ -54,9 +54,9 @@ func (circularQueue *CircularQueue) MoveOneStep() (element interface{}) {
 
 // main method
 func main() {
-	var circularQueue *CircularQueue
 
-	circularQueue = NewQueue(5)
+	//var circularQueue *CircularQueue
+	var circularQueue = NewQueue(5)
 
 	circularQueue.Add(1)
 	circularQueue.Add(2)

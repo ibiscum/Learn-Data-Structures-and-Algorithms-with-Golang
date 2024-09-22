@@ -43,7 +43,7 @@ func main() {
 
 	// var sequence []int
 	var sequence = randomSequence(24)
-	fmt.Println("\n^^^^^^ Before Sorting ^^^ \n\n", sequence)
+	fmt.Println("--- Before Sorting ---\n\n", sequence)
 	InsertionSorter(sequence)
 	fmt.Println("\n--- After Sorting ---\n\n", sequence)
 }

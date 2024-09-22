@@ -36,7 +36,7 @@ func swap(elements []int, i int, j int) {
 func main() {
 	// var elements []int
 	var elements = []int{11, 4, 18, 6, 19, 21, 71, 13, 15, 2}
-	fmt.Println("Before Sorting ", elements)
+	fmt.Println("--- Before Sorting ---\n\n", elements)
 	SelectionSorter(elements)
-	fmt.Println("After Sorting", elements)
+	fmt.Println("\n--- After Sorting ---\n\n", elements)
 }

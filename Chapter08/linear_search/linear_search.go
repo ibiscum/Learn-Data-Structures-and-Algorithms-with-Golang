@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -20,7 +20,8 @@ func LinearSearch(elements []int, findElement int) bool {
 
 // main method
 func main() {
-	var elements []int
-	elements = []int{15, 48, 26, 18, 41, 86, 29, 51, 20}
+	// var elements []int
+	var elements = []int{15, 48, 26, 18, 41, 86, 29, 51, 20}
 	fmt.Println(LinearSearch(elements, 48))
+	fmt.Println(LinearSearch(elements, 99))
 }

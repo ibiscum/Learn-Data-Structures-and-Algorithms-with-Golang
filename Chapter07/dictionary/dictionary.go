@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -104,10 +104,25 @@ func main() {
 	var dict *Dictionary = &Dictionary{}
 
 	dict.Put("1", "1")
-	dict.Put("2", "2")
-	dict.Put("3", "3")
-	dict.Put("4", "4")
+	k := dict.GetKeys()
+	v := dict.GetValues()
+	fmt.Printf("k: %s, v: %s\n", k, v)
 
-	fmt.Println(dict)
+	dict.Put("2", "2")
+	k = dict.GetKeys()
+	v = dict.GetValues()
+	fmt.Printf("k: %s, v: %s\n", k, v)
+
+	dict.Put("3", "3")
+	k = dict.GetKeys()
+	v = dict.GetValues()
+	fmt.Printf("k: %s, v: %s\n", k, v)
+
+	dict.Put("4", "4")
+	k = dict.GetKeys()
+	v = dict.GetValues()
+	fmt.Printf("k: %s, v: %s\n", k, v)
+
+	fmt.Printf("dict: %#v\n", dict)
 
 }

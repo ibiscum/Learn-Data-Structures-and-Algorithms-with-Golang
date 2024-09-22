@@ -65,6 +65,6 @@ func main() {
 
 	// var elements []int
 	var elements = createArray(40)
-	fmt.Println("\n Before Sorting \n\n", elements)
-	fmt.Println("\n-After Sorting\n\n", MergeSorter(elements))
+	fmt.Println("--- Before Sorting ---\n\n", elements)
+	fmt.Println("\n--- After Sorting ---\n\n", MergeSorter(elements))
 }

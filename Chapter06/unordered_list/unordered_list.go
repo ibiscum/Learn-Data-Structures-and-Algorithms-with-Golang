@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//Node class
+// Node class
 type Node struct {
 	property int
 	nextNode *Node
@@ -18,7 +18,7 @@ type UnOrderedList struct {
 	headNode *Node
 }
 
-//AddToHead method of UnOrderedList class
+// AddToHead method of UnOrderedList class
 func (UnOrderedList *UnOrderedList) AddToHead(property int) {
 	var node = &Node{}
 	node.property = property
@@ -32,7 +32,7 @@ func (UnOrderedList *UnOrderedList) AddToHead(property int) {
 
 }
 
-//IterateList method iterates over UnOrderedList
+// IterateList method iterates over UnOrderedList
 func (UnOrderedList *UnOrderedList) IterateList() {
 
 	var node *Node
@@ -45,9 +45,8 @@ func (UnOrderedList *UnOrderedList) IterateList() {
 // main method
 func main() {
 
-	var unOrderedList UnOrderedList
-
-	unOrderedList = UnOrderedList{}
+	// var unOrderedList UnOrderedList
+	var unOrderedList = UnOrderedList{}
 
 	unOrderedList.AddToHead(1)
 	unOrderedList.AddToHead(3)

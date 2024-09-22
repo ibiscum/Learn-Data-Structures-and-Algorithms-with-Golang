@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -70,7 +70,7 @@ func (multiSorter *multiSorter) Less(i int, j int) bool {
 	return multiSorter.lessFunction[k](p, q)
 }
 
-//main method
+// main method
 func main() {
 
 	var Commits = []Commit{
@@ -85,23 +85,23 @@ func main() {
 		{"hayvard", "Smalltalk", 180},
 	}
 
-	var user func(*Commit, *Commit) bool
-	user = func(c1 *Commit, c2 *Commit) bool {
+	// var user func(*Commit, *Commit) bool
+	var user = func(c1 *Commit, c2 *Commit) bool {
 		return c1.username < c2.username
 	}
 
-	var language func(*Commit, *Commit) bool
-	language = func(c1 *Commit, c2 *Commit) bool {
+	// var language func(*Commit, *Commit) bool
+	var language = func(c1 *Commit, c2 *Commit) bool {
 		return c1.lang < c2.lang
 	}
 
-	var increasingLines func(*Commit, *Commit) bool
-	increasingLines = func(c1 *Commit, c2 *Commit) bool {
+	// var increasingLines func(*Commit, *Commit) bool
+	var increasingLines = func(c1 *Commit, c2 *Commit) bool {
 		return c1.numlines < c2.numlines
 	}
 
-	var decreasingLines func(*Commit, *Commit) bool
-	decreasingLines = func(c1 *Commit, c2 *Commit) bool {
+	// var decreasingLines func(*Commit, *Commit) bool
+	var decreasingLines = func(c1 *Commit, c2 *Commit) bool {
 		return c1.numlines > c2.numlines // Note: > orders downwards.
 	}
 
