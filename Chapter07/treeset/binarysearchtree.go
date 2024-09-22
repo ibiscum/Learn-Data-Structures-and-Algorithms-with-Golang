@@ -1,4 +1,4 @@
-///main package has examples shown
+// /main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -36,7 +36,7 @@ func (tree *BinarySearchTree) InsertElement(key int, value int) {
 	}
 }
 
-//  insertTreeNode method
+// insertTreeNode method
 func insertTreeNode(rootNode *TreeNode, newTreeNode *TreeNode) {
 	if newTreeNode.key < rootNode.key {
 		if rootNode.leftNode == nil {
@@ -60,7 +60,7 @@ func (tree *BinarySearchTree) InOrderTraverseTree(function func(int)) {
 	inOrderTraverseTree(tree.rootNode, function)
 }
 
-//  inOrderTraverseTree method
+// inOrderTraverseTree method
 func inOrderTraverseTree(treeNode *TreeNode, function func(int)) {
 	if treeNode != nil {
 		inOrderTraverseTree(treeNode.leftNode, function)
@@ -76,7 +76,7 @@ func (tree *BinarySearchTree) PreOrderTraverseTree(function func(int)) {
 	preOrderTraverseTree(tree.rootNode, function)
 }
 
-//  preOrderTraverseTree method
+// preOrderTraverseTree method
 func preOrderTraverseTree(treeNode *TreeNode, function func(int)) {
 	if treeNode != nil {
 		function(treeNode.value)
@@ -143,7 +143,7 @@ func (tree *BinarySearchTree) SearchNode(key int) bool {
 	return searchNode(tree.rootNode, key)
 }
 
-//  searchNode method
+// searchNode method
 func searchNode(treeNode *TreeNode, key int) bool {
 	if treeNode == nil {
 		return false
@@ -164,7 +164,7 @@ func (tree *BinarySearchTree) RemoveNode(key int) {
 	removeNode(tree.rootNode, key)
 }
 
-//  removeNode method
+// removeNode method
 func removeNode(treeNode *TreeNode, key int) *TreeNode {
 	if treeNode == nil {
 		return nil
@@ -239,7 +239,7 @@ func print(tree *BinarySearchTree) {
 	}
 }
 
-//printTreeNode method
+// printTreeNode method
 func printTreeNode(treeNode *TreeNode) {
 	if treeNode != nil {
 		fmt.Println(" Value", treeNode.value)
