@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Hands-On Data Structures and algorithms with Go book
 package main
 
@@ -7,12 +7,12 @@ import (
 	"fmt"
 )
 
-//Set class
+// Set class
 type Set struct {
 	integerMap map[int]bool
 }
 
-//create the map of integer and bool
+// create the map of integer and bool
 func (set *Set) New() {
 	set.integerMap = make(map[int]bool)
 }
@@ -24,13 +24,13 @@ func (set *Set) AddElement(element int) {
 	}
 }
 
-//deletes the element from the set
+// deletes the element from the set
 func (set *Set) DeleteElement(element int) {
 
 	delete(set.integerMap, element)
 }
 
-//checks if element is in the set
+// checks if element is in the set
 func (set *Set) ContainsElement(element int) bool {
 	var exists bool
 	_, exists = set.integerMap[element]
@@ -38,12 +38,12 @@ func (set *Set) ContainsElement(element int) bool {
 	return exists
 }
 
-//Intersect method returns the set which intersects with anotherSet
+// Intersect method returns the set which intersects with anotherSet
 func (set *Set) Intersect(anotherSet *Set) *Set {
 	var intersectSet = &Set{}
 	intersectSet.New()
 	var value int
-	for value, _ = range set.integerMap {
+	for value = range set.integerMap {
 		if anotherSet.ContainsElement(value) {
 
 			intersectSet.AddElement(value)
@@ -52,16 +52,16 @@ func (set *Set) Intersect(anotherSet *Set) *Set {
 	return intersectSet
 }
 
-//Union method returns the set which is union of the set with anotherSet
+// Union method returns the set which is union of the set with anotherSet
 func (set *Set) Union(anotherSet *Set) *Set {
 	var unionSet = &Set{}
 	unionSet.New()
 	var value int
-	for value, _ = range set.integerMap {
+	for value = range set.integerMap {
 		unionSet.AddElement(value)
 	}
 
-	for value, _ = range anotherSet.integerMap {
+	for value = range anotherSet.integerMap {
 		unionSet.AddElement(value)
 	}
 
