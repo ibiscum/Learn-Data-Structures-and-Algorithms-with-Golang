@@ -18,16 +18,16 @@ func Home(writer http.ResponseWriter, request *http.Request) {
 	// var customers []Customer
 	var customers = GetCustomers()
 	log.Println(customers)
-	template_html.ExecuteTemplate(writer, "Home", customers)
-
+	err := template_html.ExecuteTemplate(writer, "Home", customers)
+	checkError(err)
 }
 
 func Create(writer http.ResponseWriter, request *http.Request) {
-	//  var customers []Customer
+	// var customers []Customer
 	//customers = GetCustomers()
 	//log.Println(customers)
-	template_html.ExecuteTemplate(writer, "Create", nil)
-
+	err := template_html.ExecuteTemplate(writer, "Create", nil)
+	checkError(err)
 }
 
 func Insert(writer http.ResponseWriter, request *http.Request) {
@@ -95,8 +95,8 @@ func Delete(writer http.ResponseWriter, request *http.Request) {
 	DeleteCustomer(customer)
 	// var customers []Customer
 	var customers = GetCustomers()
-	template_html.ExecuteTemplate(writer, "Home", customers)
-
+	err = template_html.ExecuteTemplate(writer, "Home", customers)
+	checkError(err)
 }
 
 func View(writer http.ResponseWriter, request *http.Request) {
@@ -114,8 +114,8 @@ func View(writer http.ResponseWriter, request *http.Request) {
 	// var customers []Customer
 	var customers = []Customer{customer}
 	//  customers.append(customer)
-	template_html.ExecuteTemplate(writer, "View", customers)
-
+	err = template_html.ExecuteTemplate(writer, "View", customers)
+	checkError(err)
 }
 
 func main() {

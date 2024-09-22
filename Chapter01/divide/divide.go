@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -20,9 +20,9 @@ func fibonacci(k int) int {
 // main method
 func main() {
 
-	var m int = 5
+	// var m int = 5
 
-	for m = 0; m < 8; m++ {
+	for m := 0; m < 8; m++ {
 
 		var fib = fibonacci(m)
 		fmt.Println(fib)

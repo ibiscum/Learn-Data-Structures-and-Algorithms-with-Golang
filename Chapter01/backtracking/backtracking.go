@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//findElementsWithSum  of k from arr of size
+// findElementsWithSum  of k from arr of size
 func findElementsWithSum(arr [10]int, combinations [19]int, size int, k int, addValue int, l int, m int) int {
 
 	var num int = 0
@@ -18,8 +18,8 @@ func findElementsWithSum(arr [10]int, combinations [19]int, size int, k int, add
 
 	if addValue == k {
 		num = num + 1
-		var p int = 0
-		for p = 0; p < m; p++ {
+		// var p int = 0
+		for p := 0; p < m; p++ {
 
 			fmt.Printf("%d,", arr[combinations[p]])
 		}

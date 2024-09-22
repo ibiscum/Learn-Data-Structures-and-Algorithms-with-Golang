@@ -79,7 +79,8 @@ func InsertCustomer(customer Customer) {
 	if error != nil {
 		panic(error.Error())
 	}
-	insert.Exec(customer.CustomerName, customer.SSN)
+	_, err := insert.Exec(customer.CustomerName, customer.SSN)
+	checkError(err)
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()
@@ -116,7 +117,8 @@ func deleteCustomer(customer Customer) {
 	if error != nil {
 		panic(error.Error())
 	}
-	delete.Exec(customer.CustomerId)
+	_, err := delete.Exec(customer.CustomerId)
+	checkError(err)
 	//log.Println("INSERT: Customer Name: " + customer.name + " | SSN: " + customer.ssn)
 
 	defer database.Close()

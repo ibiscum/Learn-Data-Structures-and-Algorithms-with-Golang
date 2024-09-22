@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -7,12 +7,12 @@ import (
 	"fmt"
 )
 
-//DataTransferObjectFactory struct
+// DataTransferObjectFactory struct
 type DataTransferObjectFactory struct {
 	pool map[string]DataTransferObject
 }
 
-//DataTransferObjectFactory class method getDataTransferObject
+// DataTransferObjectFactory class method getDataTransferObject
 func (factory DataTransferObjectFactory) getDataTransferObject(dtoType string) DataTransferObject {
 
 	var dto = factory.pool[dtoType]
@@ -43,7 +43,7 @@ type DataTransferObject interface {
 	getId() string
 }
 
-//Customer struct
+// Customer struct
 type Customer struct {
 	id   string //sequence generator
 	name string
@@ -57,30 +57,30 @@ func (customer Customer) getId() string {
 
 }
 
-//Employee struct
+// Employee struct
 type Employee struct {
 	id   string
 	name string
 }
 
-//Employee class method getId
+// Employee class method getId
 func (employee Employee) getId() string {
 	return employee.id
 }
 
-//Manager struct
+// Manager struct
 type Manager struct {
 	id   string
 	name string
 	dept string
 }
 
-//Manager class method getId
+// Manager class method getId
 func (manager Manager) getId() string {
 	return manager.id
 }
 
-//Address struct
+// Address struct
 type Address struct {
 	id          string
 	streetLine1 string
@@ -89,12 +89,17 @@ type Address struct {
 	city        string
 }
 
-//Address class method getId
+// Address class method getId
 func (address Address) getId() string {
 	return address.id
 }
 
-//main method
+// Address class method getCity
+func (address Address) getCity() string {
+	return address.city
+}
+
+// main method
 func main() {
 	var factory = DataTransferObjectFactory{make(map[string]DataTransferObject)}
 	var customer DataTransferObject = factory.getDataTransferObject("customer")

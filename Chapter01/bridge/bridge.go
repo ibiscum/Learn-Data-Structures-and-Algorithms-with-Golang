@@ -1,18 +1,19 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
 // importing fmt package
 import (
 	"fmt"
+	"log"
 )
 
-//IDrawShape interface
+// IDrawShape interface
 type IDrawShape interface {
 	drawShape(x [5]float32, y [5]float32)
 }
 
-//DrawShape struct
+// DrawShape struct
 type DrawShape struct{}
 
 // DrawShape struct has  method draw Shape with float x and y coordinates
@@ -20,13 +21,13 @@ func (drawShape DrawShape) drawShape(x [5]float32, y [5]float32) {
 	fmt.Println("Drawing Shape")
 }
 
-//IContour interace
+// IContour interace
 type IContour interface {
 	drawContour(x [5]float32, y [5]float32)
 	resizeByFactor(factor int)
 }
 
-//DrawContour struct
+// DrawContour struct
 type DrawContour struct {
 	x      [5]float32
 	y      [5]float32
@@ -34,15 +35,16 @@ type DrawContour struct {
 	factor int
 }
 
-//DrawContour method drawContour given the coordinates
+// DrawContour method drawContour given the coordinates
 func (contour DrawContour) drawContour(x [5]float32, y [5]float32) {
 	fmt.Println("Drawing Contour")
 	contour.shape.drawShape(contour.x, contour.y)
 }
 
-//DrawContour method resizeByFactor given factor
+// DrawContour method resizeByFactor given factor
 func (contour DrawContour) resizeByFactor(factor int) {
 	contour.factor = factor
+	log.Printf("%v", contour.factor)
 }
 
 // main method
