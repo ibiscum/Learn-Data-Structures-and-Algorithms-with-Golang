@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -6,15 +6,14 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 // randomSequence method
 func randomSequence(num int) []int {
 
-	var sequence []int
-	sequence = make([]int, num, num)
-	rand.Seed(time.Now().UnixNano())
+	// var sequence []int
+	var sequence = make([]int, num)
+	// rand.Seed(time.Now().UnixNano())
 	var i int
 	for i = 0; i < num; i++ {
 		sequence[i] = rand.Intn(999) - rand.Intn(999)
@@ -22,7 +21,7 @@ func randomSequence(num int) []int {
 	return sequence
 }
 
-//InsertionSorter method
+// InsertionSorter method
 func InsertionSorter(elements []int) {
 	var n = len(elements)
 	var i int
@@ -39,12 +38,12 @@ func InsertionSorter(elements []int) {
 	}
 }
 
-//main method
+// main method
 func main() {
 
-	var sequence []int
-	sequence = randomSequence(24)
+	// var sequence []int
+	var sequence = randomSequence(24)
 	fmt.Println("\n^^^^^^ Before Sorting ^^^ \n\n", sequence)
 	InsertionSorter(sequence)
-	fmt.Println("\n--- After Sorting ---\n\n", sequence, "\n")
+	fmt.Println("\n--- After Sorting ---\n\n", sequence)
 }

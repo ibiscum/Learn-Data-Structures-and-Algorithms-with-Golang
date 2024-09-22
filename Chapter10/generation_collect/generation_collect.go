@@ -5,7 +5,6 @@ package main
 
 func GenerationCollect(){
 
-
    var currentGeneration int
 
    currentGeneration = 3
@@ -17,16 +16,11 @@ func GenerationCollect(){
    var object *object
 
    for _, object = range objects {
-
-   var markedAlready bool
-
-   markedAlready = IfMarked(object)
-   if markedAlready {
-
-        map[object] = true
-
+      var markedAlready bool
+      
+      markedAlready = IfMarked(object)
+      if markedAlready {
+         map[object] = true
+      }
    }
-   }
-
-
 }

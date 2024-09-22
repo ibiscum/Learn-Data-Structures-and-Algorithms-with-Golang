@@ -1,4 +1,4 @@
-//main package has examples shown
+// main package has examples shown
 // in Go Data Structures and algorithms book
 package main
 
@@ -6,14 +6,13 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 // create array
 func createArray(num int) []int {
-	var array []int
-	array = make([]int, num, num)
-	rand.Seed(time.Now().UnixNano())
+	// var array []int
+	var array = make([]int, num)
+	// rand.Seed(time.Now().UnixNano())
 	var i int
 	for i = 0; i < num; i++ {
 		array[i] = rand.Intn(99999) - rand.Intn(99999)
@@ -27,8 +26,8 @@ func MergeSorter(array []int) []int {
 	if len(array) < 2 {
 		return array
 	}
-	var middle int
-	middle = (len(array)) / 2
+	// var middle int
+	var middle = (len(array)) / 2
 	return JoinArrays(MergeSorter(array[:middle]), MergeSorter(array[middle:]))
 }
 
@@ -39,8 +38,8 @@ func JoinArrays(leftArr []int, rightArr []int) []int {
 	var i int
 	var j int
 	num, i, j = len(leftArr)+len(rightArr), 0, 0
-	var array []int
-	array = make([]int, num, num)
+	// var array []int
+	var array = make([]int, num)
 
 	var k int
 	for k = 0; k < num; k++ {
@@ -64,8 +63,8 @@ func JoinArrays(leftArr []int, rightArr []int) []int {
 // main method
 func main() {
 
-	var elements []int
-	elements = createArray(40)
+	// var elements []int
+	var elements = createArray(40)
 	fmt.Println("\n Before Sorting \n\n", elements)
-	fmt.Println("\n-After Sorting\n\n", MergeSorter(elements), "\n")
+	fmt.Println("\n-After Sorting\n\n", MergeSorter(elements))
 }

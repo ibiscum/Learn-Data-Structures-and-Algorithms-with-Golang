@@ -1,6 +1,8 @@
+package weightedreference
 
+import "sync"
 
-//Reference Counter
+// Reference Counter
 type ReferenceCounter struct {
 	num     *uint32
 	pool    *sync.Pool
@@ -8,7 +10,7 @@ type ReferenceCounter struct {
 	weight  int
 }
 
-//WeightedReference method
+// WeightedReference method
 func WeightedReference() int {
 
 	var references []ReferenceCounter
