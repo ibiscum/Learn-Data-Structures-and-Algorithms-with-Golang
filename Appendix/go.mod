@@ -2,4 +2,4 @@ module github.com/ibiscum/Learn-Data-Structures-and-Algorithms-with-Golang/Appen
 
 go 1.23.0
 
-require golang.org/x/net v0.29.0
+require golang.org/x/net v0.36.0
