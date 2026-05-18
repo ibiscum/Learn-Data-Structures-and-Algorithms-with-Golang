@@ -1,3 +1,3 @@
 module github.com/ibiscum/Learn-Data-Structures-and-Algorithms-with-Golang/Chapter09
 
-go 1.24.0
+go 1.25.0
